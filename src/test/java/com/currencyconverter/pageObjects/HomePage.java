@@ -50,7 +50,6 @@ public class HomePage {
 	
 	public void inputAmount(double amount) {
 		ldriver.navigate().refresh();
-		inputAmount.clear();
 		inputAmount.sendKeys(String.valueOf(amount));
 	}
 	
@@ -73,7 +72,7 @@ public class HomePage {
 	
 	public void clickConvertButton() {
 		//To avoid StaleElementReferenceException for clicking on convert button, refreshing the page here
-		ldriver.navigate().refresh();
+		//ldriver.navigate().refresh();
 		//js.executeScript("arguments[0].click();", Convert);
 		convertButton.click();
 		System.out.println("clicked Convert Button");

@@ -19,7 +19,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.currencyconverter.utilities.ReadConfig;
@@ -35,7 +37,7 @@ public class BaseClass {
 	
 	@SuppressWarnings("deprecation")
 	@Parameters("browser")
-	@BeforeClass
+	@BeforeTest
 	public void setup(String br) throws InterruptedException
 	{
 		logger = Logger.getLogger("currency converter");
@@ -79,7 +81,7 @@ public class BaseClass {
 		}
 	}
 	
-	@AfterClass
+	@AfterTest
 	public void tearDown()
 	{
 		driver.quit();
